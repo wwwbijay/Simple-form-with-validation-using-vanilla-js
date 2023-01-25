@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MP Validator</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@200;300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="mp_validation">
+      <div class="wrap">
+        <form
+          asp-action="Create"
+          method="post"
+          class="form"
+          id="create"
+        >
+          <h1>MP Validation</h1>
+          <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+          <div class="form-group">
+            <label asp-for="FullName" class="control-label">Full Name</label>
+            <input
+            type="text"
+              asp-for="FullName"
+              class="form-control"
+              id="fullname"
+              autocomplete="off"
+            />
+            <span
+              id="namemsg"
+              asp-validation-for="FullName"
+              class="text-danger"
+            ></span>
+            <small></small>
+          </div>
+          <div class="form-group">
+            <label asp-for="UserName" class="control-label">Username</label>
+            <input
+            type="text"
+              asp-for="UserName"
+              class="form-control"
+              id="username"
+              autocomplete="off"
+            />
+            <span
+              id="usermsg"
+              asp-validation-for="UserName"
+              class="text-danger"
+            ></span>
+            <small></small>
+          </div>
+          <div class="form-group">
+            <label asp-for="MobileNumber" class="control-label">Mobile Number</label>
+            <input
+            type="text"
+              asp-for="MobileNumber"
+              class="form-control"
+              id="mobileno"
+              autocomplete="off"
+            />
+            <span
+              id="nummsg"
+              asp-validation-for="MobileNumber"
+              class="text-danger"
+            ></span>
+            <small></small>
+          </div>
+          <div class="form-group">
+            <label asp-for="Salary" class="control-label">Salary</label>
+            <input
+            type="text"
+              asp-for="Salary"
+              class="form-control"
+              id="salary"
+              autocomplete="off"
+            />
+            <span
+              id="salarymsg"
+              asp-validation-for="Salary"
+              class="text-danger"
+            ></span>
+            <small></small>
+          </div>
+          <div class="form-group">
+            <label asp-for="ImageName" class="control-label">Upload</label>
+            <input
+              asp-for="ImageName"
+              type="file"
+              class="form-control"
+              autocomplete="off"
+              id="file"
+            />
+            <span asp-validation-for="ImageName" class="text-danger"></span>
+            <small></small>
+          </div>
+          <div class="form-group">
+            <input
+              type="submit"
+              value="Submit"
+              class="btn btn-primary"
+              id="sumbit"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="./validate.js"></script>
+  </body>
+</html>
